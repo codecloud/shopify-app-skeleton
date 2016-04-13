@@ -156,6 +156,9 @@ return [
         App\Providers\EventServiceProvider::class,
         App\Providers\RouteServiceProvider::class,
 
+        //codecloud packages
+        CodeCloud\ShopifyApiClient\ShopifyApiClientServiceProvider::class,
+
         //third party packages
         Barryvdh\LaravelIdeHelper\IdeHelperServiceProvider::class,
 
