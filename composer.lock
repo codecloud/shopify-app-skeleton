@@ -130,12 +130,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/codecloud/shopify-api-client.git",
-                "reference": "c9a088b7aa82fb7589c76ff27cf9741815636a82"
+                "reference": "e3bd4e3b5905023b84ef46e0dcac51f61a0cc4e7"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/codecloud/shopify-api-client/zipball/c9a088b7aa82fb7589c76ff27cf9741815636a82",
-                "reference": "c9a088b7aa82fb7589c76ff27cf9741815636a82",
+                "url": "https://api.github.com/repos/codecloud/shopify-api-client/zipball/e3bd4e3b5905023b84ef46e0dcac51f61a0cc4e7",
+                "reference": "e3bd4e3b5905023b84ef46e0dcac51f61a0cc4e7",
                 "shasum": ""
             },
             "require": {
@@ -172,7 +172,7 @@
                 "source": "https://github.com/codecloud/shopify-api-client/tree/master",
                 "issues": "https://github.com/codecloud/shopify-api-client/issues"
             },
-            "time": "2016-04-13 13:49:21"
+            "time": "2016-04-19 11:34:46"
         },
         {
             "name": "dnoegel/php-xdg-base-dir",
@@ -389,16 +389,16 @@
         },
         {
             "name": "guzzlehttp/psr7",
-            "version": "1.2.3",
+            "version": "1.3.0",
             "source": {
                 "type": "git",
                 "url": "https://github.com/guzzle/psr7.git",
-                "reference": "2e89629ff057ebb49492ba08e6995d3a6a80021b"
+                "reference": "31382fef2889136415751badebbd1cb022a4ed72"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/guzzle/psr7/zipball/2e89629ff057ebb49492ba08e6995d3a6a80021b",
-                "reference": "2e89629ff057ebb49492ba08e6995d3a6a80021b",
+                "url": "https://api.github.com/repos/guzzle/psr7/zipball/31382fef2889136415751badebbd1cb022a4ed72",
+                "reference": "31382fef2889136415751badebbd1cb022a4ed72",
                 "shasum": ""
             },
             "require": {
@@ -443,7 +443,7 @@
                 "stream",
                 "uri"
             ],
-            "time": "2016-02-18 21:54:00"
+            "time": "2016-04-13 19:56:01"
         },
         {
             "name": "jakub-onderka/php-console-color",

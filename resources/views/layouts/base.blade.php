@@ -8,10 +8,11 @@
     <meta name="author" content="Imagine Apps" />
     @yield('metaTags')
 
-    <link href="/assets/third-party/bootstrap/css/bootstrap.min.css" rel="stylesheet" type="text/css" />
+    <!--<link href="/assets/third-party/bootstrap/css/bootstrap.min.css" rel="stylesheet" type="text/css" />-->
 
     <!-- WebApp styles -->
     <link href="/assets/app/css/global.css" rel="stylesheet" type="text/css" />
+    @yield('layoutStyles')
     @yield('styles')
 </head>
 

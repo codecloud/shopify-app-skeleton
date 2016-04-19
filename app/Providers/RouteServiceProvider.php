@@ -17,6 +17,11 @@ class RouteServiceProvider extends ServiceProvider
     protected $namespace = 'App\Http\Controllers';
 
     /**
+     * @var string
+     */
+    protected $frameworkNamespace = 'App\ShopifyFramework\Http\Controllers';
+
+    /**
      * Define your route model bindings, pattern filters, etc.
      *
      * @param  \Illuminate\Routing\Router  $router
@@ -37,6 +42,7 @@ class RouteServiceProvider extends ServiceProvider
      */
     public function map(Router $router)
     {
+        $this->mapFrameworkRoutes($router);
         $this->mapWebRoutes($router);
 
         //
@@ -54,8 +60,15 @@ class RouteServiceProvider extends ServiceProvider
     {
         $router->group([
             'namespace' => $this->namespace, 'middleware' => 'web',
-        ], function ($router) {
+        ], function () {
             require app_path('Http/routes.php');
+        });
+    }
+
+    protected function mapFrameworkRoutes(Router $router)
+    {
+        $router->group(['namespace' => $this->frameworkNamespace], function() {
+            require app_path('ShopifyFramework/Http/routes.php');
         });
     }
 }
