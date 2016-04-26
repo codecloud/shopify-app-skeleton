@@ -1,0 +1,16 @@
+input[type=email] {
+    width: 100%;
+    font-size: 15px;
+}
+
+.first-content-in-section {
+    margin-top: 30px;
+}
+
+.left {
+    float: left;
+}
+
+.right {
+    float: right;
+}

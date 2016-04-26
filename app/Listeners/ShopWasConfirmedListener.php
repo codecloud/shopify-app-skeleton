@@ -1,21 +1,23 @@
 <?php
 namespace App\Listeners;
 
-use CodeCloud\ShopifyApiClient\Event\ShopifyStoreWasConfirmed;
-use CodeCloud\ShopifyFramework\Entity\User;
-use Illuminate\Queue\Listener;
+use App\ShopifyFramework\Entity\User;
+use App\ShopifyFramework\Event\ShopifyShopWasConfirmed;
 
-class ShopWasConfirmedListener extends Listener
+class ShopWasConfirmedListener
 {
     /**
-     * @param ShopifyStoreWasConfirmed $event
+     * @param ShopifyShopWasConfirmed $event
      */
-    public function handle(ShopifyStoreWasConfirmed $event)
+    public function handle(ShopifyShopWasConfirmed $event)
     {
-        $user = User::create([
-            'shop_url'     => $event->getShopUrl(),
-            'access_token' => $event->getAccessToken()
+        $user = new User([
+            'shop_url' => $event->getShopUrl(),
+            'last_logged_in_at' => date('Y-m-d H:i:s')
         ]);
+
+        $user->access_token = $event->getAccessToken();
+        $user->save();
 
         \Auth::login($user);
     }

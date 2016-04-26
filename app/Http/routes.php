@@ -12,4 +12,3 @@
 */
 
 Route::controller('/', 'HomeController');
-

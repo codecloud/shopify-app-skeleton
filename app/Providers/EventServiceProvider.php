@@ -1,9 +1,8 @@
 <?php
-
 namespace App\Providers;
 
 use App\Listeners\ShopWasConfirmedListener;
-use CodeCloud\ShopifyApiClient\Event\ShopifyStoreWasConfirmed;
+use App\ShopifyFramework\Event\ShopifyShopWasConfirmed;
 use Illuminate\Contracts\Events\Dispatcher as DispatcherContract;
 use Illuminate\Foundation\Support\Providers\EventServiceProvider as ServiceProvider;
 
@@ -15,7 +14,7 @@ class EventServiceProvider extends ServiceProvider
      * @var array
      */
     protected $listen = [
-        ShopifyStoreWasConfirmed::class => [
+        ShopifyShopWasConfirmed::class => [
             ShopWasConfirmedListener::class
         ],
     ];

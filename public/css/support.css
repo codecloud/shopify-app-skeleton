@@ -1,0 +1,27 @@
+.support-thread h2 {
+    font-size: 24px;
+    font-weight: normal;
+    letter-spacing: 1.1px;
+}
+
+.support-thread .message {
+    padding: 15px;
+}
+
+.support-thread .message:nth-child(even) {
+    background: #ffffe6;
+}
+
+.support-thread .message:nth-child(odd) {
+    background: #e6ffe6;
+}
+
+.support-thread .content {
+    clear: both;
+    padding-top: 15px;
+    line-height: 20px;
+}
+
+.support-thread .metadata {
+    text-align: right;
+}

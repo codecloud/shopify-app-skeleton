@@ -1,7 +1,9 @@
 <?php
 namespace App\ShopifyFramework\Http\Request;
 
-abstract class Request extends \Illuminate\Http\Request
+use Illuminate\Foundation\Http\FormRequest;
+
+abstract class Request extends FormRequest
 {
     public function authorize()
     {

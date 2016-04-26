@@ -6,8 +6,8 @@ return [
         'post_install_redirect_uri' => env('APP_URL') . '/shopify-install/complete'
     ],
     'keys' => [
-        'api_key'    => '93d8b4684b4c3dcaff2d31639612fa69',
-        'secret_key' => 'dd05a2588925f0156f5be12eb2d943a5'
+        'api_key'    => '26f829b7d9e2da4f1592992d2dc44606',
+        'secret_key' => '4a8e0703c928dae7bf905b36bd7c8cfe'
     ],
     'scopes' => [
         'read_content',
@@ -27,7 +27,5 @@ return [
         'read_shipping',
         'write_shipping',
         'read_analytics',
-        'read_users',
-        'write_users'
     ]
 ];

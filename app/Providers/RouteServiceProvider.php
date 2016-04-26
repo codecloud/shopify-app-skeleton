@@ -67,7 +67,7 @@ class RouteServiceProvider extends ServiceProvider
 
     protected function mapFrameworkRoutes(Router $router)
     {
-        $router->group(['namespace' => $this->frameworkNamespace], function() {
+        $router->group(['namespace' => $this->frameworkNamespace, 'middleware' => 'web'], function() {
             require app_path('ShopifyFramework/Http/routes.php');
         });
     }

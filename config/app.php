@@ -91,7 +91,7 @@ return [
     |
     */
 
-    'key' => env('APP_KEY', md5(microtime(true))),
+    'key' => env('APP_KEY', '21*&GE@GU*RFGUGUF*@G*g82ifhngfrw'),
 
     'cipher' => 'AES-256-CBC',
 
