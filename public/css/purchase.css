@@ -1,0 +1,28 @@
+.product-description {
+    text-align: center;
+}
+
+.feature {
+    display: block;
+    border-bottom: 1px dashed #ccc;
+    padding: 10px 0;
+}
+
+.feature.disabled {
+    opacity: 0.3;
+}
+
+.name {
+    font-size: 24px;
+    font-weight: bold;
+    padding-bottom: 20px;
+}
+
+.price {
+    font-size: 18px;
+    padding-bottom: 20px;
+}
+
+.cta {
+    padding-top: 20px;
+}

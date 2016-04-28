@@ -16,6 +16,26 @@ class User extends EntityModel implements Authenticatable
     protected $fillable = ['owner_name', 'email_address', 'shop_url', 'last_logged_in_at'];
 
     /**
+     * @return bool
+     */
+    public function hasActivePurchase()
+    {
+        foreach ($this->singlePurchases as $purchase) {
+            if ($purchase->isActive()) {
+                return true;
+            }
+        }
+
+        foreach ($this->recurringPurchases as $purchase) {
+            if ($purchase->isActive()) {
+                return true;
+            }
+        }
+
+        return false;
+    }
+
+    /**
      * @return \Illuminate\Database\Eloquent\Relations\HasMany
      */
     public function singlePurchases()

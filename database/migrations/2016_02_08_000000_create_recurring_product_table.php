@@ -10,7 +10,7 @@ class CreateRecurringProductTable extends Migration
             $table->string('display_name');
             $table->string('slug');
             $table->string('description');
-            $table->string('features');
+            $table->string('features', 1000);
             $table->decimal('amount', 5, 2)->unsigned();
             $table->enum('frequency', ['monthly']);
             $table->timestamps();

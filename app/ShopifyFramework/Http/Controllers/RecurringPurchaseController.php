@@ -15,7 +15,7 @@ class RecurringPurchaseController extends Controller
     public function getOptions()
     {
         return view('framework.recurring-purchase.options', [
-            'options' => RecurringProduct::all()
+            'products' => RecurringProduct::all()
         ]);
     }
 
@@ -25,7 +25,7 @@ class RecurringPurchaseController extends Controller
 
         $process = new \App\ShopifyFramework\Process\MakeRecurringPurchase($this->api()->recurringApplicationCharge());
 
-        $redirectUrl = url('recurring-purchase/confirm');
+        $redirectUrl = url('recurring-purchase/confirm?product=' . $product->id);
 
         $confirmationUrl = $process->getChargeUrl($product, $redirectUrl);
 
@@ -35,7 +35,7 @@ class RecurringPurchaseController extends Controller
     public function getConfirm(ConfirmRecurringPurchase $request)
     {
         $process = new \App\ShopifyFramework\Process\MakeRecurringPurchase($this->api()->recurringApplicationCharge());
-        $process->activateCharge($request->get('charge_id'));
+        $process->activateCharge($request->get('charge_id'), $this->user(), RecurringProduct::get($request->get('product')));
         return redirect('/entry');
     }
 }

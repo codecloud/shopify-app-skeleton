@@ -7,6 +7,7 @@ use App\ShopifyFramework\Entity\RecurringPurchase;
 use App\Traits\CanPerformDbTransactions;
 use App\ShopifyFramework\Entity\User;
 use Codecloud\ShopifyApiClient\Endpoint\RecurringApplicationCharge;
+use CodeCloud\ShopifyApiClient\EndpointFramework\EndpointProxy;
 
 class MakeRecurringPurchase
 {
@@ -18,9 +19,9 @@ class MakeRecurringPurchase
     private $chargeEndpoint;
 
     /**
-     * @param RecurringApplicationCharge $chargeEndpoint
+     * @param RecurringApplicationCharge|EndpointProxy $chargeEndpoint
      */
-    public function __construct(RecurringApplicationCharge $chargeEndpoint)
+    public function __construct(EndpointProxy $chargeEndpoint)
     {
         $this->chargeEndpoint = $chargeEndpoint;
     }
@@ -31,8 +32,9 @@ class MakeRecurringPurchase
      */
     public function getChargeUrl(RecurringProduct $product, $returnUrl)
     {
-        $response = $this->chargeEndpoint->create($product->name, $product->amount, [
-            'return_url' => $returnUrl
+        $response = $this->chargeEndpoint->create($product->display_name, $product->amount, [
+            'return_url' => $returnUrl,
+            'test' => true
         ]);
 
         return $response->confirmation_url;
@@ -46,7 +48,7 @@ class MakeRecurringPurchase
      */
     public function activateCharge($chargeId, User $user, RecurringProduct $product)
     {
-        if (! $this->chargeEndpoint->activate($chargeId)) {
+        if (! $this->chargeEndpoint->activate($chargeId, [])) {
             throw new \Exception('The charge could not be activated');
         }
 

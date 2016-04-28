@@ -20,4 +20,12 @@ class SinglePurchase extends EntityModel
     {
         return $this->hasMany(SingleCharge::class);
     }
+
+    /**
+     * @return bool
+     */
+    public function isActive()
+    {
+        return $this->status == 'ACTIVE';
+    }
 }

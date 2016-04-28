@@ -7,4 +7,6 @@ class RecurringCharge extends EntityModel
      * @var string
      */
     protected $table = 'recurring_charge';
+
+    protected $guarded = [];
 }
